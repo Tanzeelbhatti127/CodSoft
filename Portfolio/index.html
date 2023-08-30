@@ -1,62 +1,116 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <nav id="main-nav">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-            <a href="CV_Tanzeel.pdf">Download CV</a>
-        </nav>
-        <div id="about">
-            <h1>Hey i'm Tanzeel</h1>
-            <h2>An aspiring Web Developer</h2>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <p> I'm a Web Developer passionate about crafting engaging online experiences.<br/>
-                 With a knack for user-friendly design, I create websites that captivate and guide visitors effortlessly.<br/>
-                  My focus on clean layouts and staying updated with the latest web trends ensures that every project delivers a seamless experience.<br/>
-                  I thrive on optimizing performance and love diving into new technologies.<br/>
-                 Let's connect and explore how I can contribute to your next digital venture!"</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanzeel's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./Styles/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Styles/Mobile__responsive.css "
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <script src="./Scripts/App.js"></script>
+  </head>
+  <body>
+    <!-- Tailwind CSS Navbar -->
+    <nav class="bg-gray-800 p-1">
+      <div class="container mx-auto flex justify-between items-center">
+        <a class="text-white text-xl font-semibold" href="#">Tanzeel</a>
+        <div class="space-x-4">
+          <a class="text-gray-300 hover:text-white" href="#about">About</a>
+          <a class="text-gray-300 hover:text-white" href="#services"
+            >Services</a
+          >
+          <a class="text-gray-300 hover:text-white" href="#contact">Contact</a>
+          <a
+            class="text-gray-300 hover:text-white"
+            href="CV_Tanzeel.pdf"
+            download
+            >Download CV</a
+          >
         </div>
-        <div id="services">
-            <h3>Services I'm Providing</h3>
-            <div id="projects">
-                <a href="">
-                    <div id="project">
-                        <img src="frontend.png">
-                        <p>Front-end</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="project">
-                        <img src="backend.png">
-                        <p>Back-end</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="project">
-                        <img src="logod.jpg">
-                        <p>Logo Design</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div id="end-nav">
-            <h1>Let's work together...</h1>
-            <nav id="contact">
-                <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">LinkedIn</a>
-                <a href="https://github.com/Tanzeelbhatti127">GitHub</a>
-                <a href="mailto:tanzeelbhatti80@gmail.com">Send a mail</a>
-                <a href="">Call me</a>
-            </nav>
-        </div>
-    </body>
+      </div>
+    </nav>
+
+    <!-- About Section -->
+    <!-- About Section -->
+    <div id="about">
+      <h1 class="text-center name">Hey, I'm Tanzeel</h1>
+      <h2>An Aspiring Web Developer</h2>
+      <p id="typing-text">
+        <!-- This is where the typing animation will appear -->
+      </p>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+      <h3>Services I Provide</h3>
+      <div id="projects">
+        <a href="#">
+          <div class="project" data-aos="fade-left">
+            <img src="./Asset/images/frontend.png" alt="Front-end" />
+            <p>Front-end Development</p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="project" data-aos="fade-up">
+            <img src="./Asset/images/backend.png" alt="Back-end" />
+            <p>Back-end Development</p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="project" data-aos="fade-right">
+            <img src="./Asset/images/logo.jpg" alt="Logo Design" />
+            <p>Logo Design</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="end-nav">
+      <h1>Let's Work Together...</h1>
+      <nav id="contact">
+        <a
+          href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/Tanzeelbhatti127">GitHub</a>
+        <a href="mailto:tanzeelbhatti80@gmail.com">Send an Email</a>
+        <a href="#">Call Me</a>
+      </nav>
+    </div>
+    <script>
+      AOS.init();
+      const typingText =
+        "I'm a passionate Web Developer dedicated to creating engaging online experiences. With a focus on user-friendly design, I craft websites that captivate and guide visitors effortlessly. My clean layouts and up-to-date knowledge of web trends ensure every project delivers a seamless experience. I'm also enthusiastic about optimizing performance and exploring new technologies. Let's connect and discuss how I can contribute to your next digital venture!";
+
+      const typingElement = document.getElementById('typing-text');
+      let charIndex = 0;
+
+      function typeText() {
+        if (charIndex < typingText.length) {
+          typingElement.textContent += typingText.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeText, 15);
+        }
+      }
+      typeText();
+    </script>
+  </body>
 </html>
